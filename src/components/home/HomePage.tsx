@@ -8,9 +8,9 @@ const HomePage = () => {
     useEffect(() => {
         const getArticles = async () => {
             try {
-                const { data } = await ArticleService.getArticles({ q: "bitcoin" });
+                const { data } = await ArticleService.getArticles({ country: "vi", size: 10});
 
-                setArticles(data.articles);
+                setArticles(data.results);
             } catch (error) {
                 console.log(error);
             }

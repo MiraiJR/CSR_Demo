@@ -1,5 +1,5 @@
 type ArticlesResponse = {
     status: string;
-    totalResult: number;
-    articles: Article[];
+    totalResults: number;
+    results: Article[];
 }
