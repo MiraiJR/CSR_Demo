@@ -1,14 +1,14 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    baseURL: "https://newsdata.io/api/1",
+    baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 axiosClient.interceptors.request.use(
     (config) => {
         config.params = {
             ...config.params,
-            apikey: import.meta.env.VITE_NEWSAPI_KEY,
+            key: import.meta.env.VITE_API_KEY,
         };
         
         return config;

@@ -8,9 +8,19 @@ const HomePage = () => {
     useEffect(() => {
         const getArticles = async () => {
             try {
-                const { data } = await ArticleService.getArticles({ country: "vi", size: 10});
+                const { data } = await ArticleService.getArticles({ q: 'a', maxResults: 40, projection: 'lite', startIndex: 1 });
 
-                setArticles(data.results);
+                const articlesTemp: Article[] = [];
+
+                data.items.map((item: any) => {
+                    const article: Article = {
+                        ...item.volumeInfo,
+                    }
+
+                    articlesTemp.push(article);
+                })
+
+                setArticles(articlesTemp);
             } catch (error) {
                 console.log(error);
             }

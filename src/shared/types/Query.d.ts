@@ -6,4 +6,7 @@ interface QueryArticle {
     category?: string;
     page?: number;
     size?: number;
+    maxResults?: number;
+    startIndex?: number;
+    projection?: string;
 }

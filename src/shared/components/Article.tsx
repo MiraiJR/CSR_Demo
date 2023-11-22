@@ -8,7 +8,7 @@ const ArticleComponent = ({ article }: itemProps) => {
 
     return (
         <div className='relative'>
-            <img src={article.image_url ?? emptyImage} alt={article.title} className='w-full h-[200px] object-cover' />
+            <img src={article.imageLinks.thumbnail ?? emptyImage} alt={article.title} className='w-full h-[300px]' />
             <h2>{article.title}</h2>
         </div>
     )

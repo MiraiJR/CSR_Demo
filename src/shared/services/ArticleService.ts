@@ -1,7 +1,7 @@
 import axiosClient from "../libs/axiosClient";
 
 const ArticleService = {
-    getArticles: (query: QueryArticle) => axiosClient.get<ArticlesResponse>(`/news`, {
+    getArticles: (query: QueryArticle) => axiosClient.get<any>(`/volumes`, {
         params: {
             ...query,
         }
